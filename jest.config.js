@@ -1,17 +1,8 @@
 module.exports = {
   rootDir: process.cwd(),
-  moduleFileExtensions: [
-    "js",
-    "ts"
-  ],
-  testPathIgnorePatterns: [
-    "/node_modules/"
-  ],
-  testMatch: [
-    "<rootDir>/**/*.unit.test.*.ts",
-  ],
-  transform: {
-    "\\.(js|ts)$": "babel-jest",
-  },
+  moduleFileExtensions: ["js"],
+  testPathIgnorePatterns: ["/node_modules/"],
+  testMatch: ["<rootDir>/**/*.unit.test.*.js"],
+  transform: { "\\.(js)$": "babel-jest" },
   testEnvironment: "node",
 };
