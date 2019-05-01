@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "lib": [
+      // Use the latest ECMAScript features.
+      "esnext",
+    ],
+    // Target a conservative version of ECMAScript.
+    "target": "es6",
+    // Use TypeScript for type checking and Babel for transpiling.
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Disallow features that require cross-file information for emit.
+    // This is important for Babel's single file emit design.
+    "isolatedModules": false,
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": false,
+    // Import non-ES modules as default imports; implies allowSyntheticDefaultImports. 
+    "esModuleInterop": true,
+    // Support eslint's 'consistent-return'
+    "noImplicitReturns": true,
+    // Map paths to reduce file-system coupling.
+    // Mappings must exist in tsconfig.json, jest.config.json, and babel.config.json
+    "baseUrl": "./src",
+    "paths": {
+      // Alias all top-level modules.
+      // @rubikon/utilities -> ./src/utilities
+      // @rubikon/domain/domainModel -> ./src/domainModel
+      "@rubikon/*": [
+        "*"
+      ]
+    },
+    // Disallow inconsistently-cased references to the same file. This catches 
+    // only some of the casing errors that happen on Linux (but not on the more 
+    // lenient Mac and Windows systems.)
+    "forceConsistentCasingInFileNames": true
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "**/auth0/rules/*.js"
+  ]
+}
